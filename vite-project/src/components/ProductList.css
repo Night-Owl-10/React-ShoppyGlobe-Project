@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.productList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.search-input {
+    width: 600px;
+    height: 30px;
+    font-weight: 300;
+    font-size: large;
+    border-radius: 5px 0 0 5px;
+    padding: 20px;
+    border-right: none;
+}
+
+.search-btn {
+    width: 60px;
+    height: 40px;
+    font-size: 18px;
+    border-radius: 0px 5px 5px 0;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-left: none;
+    background-color: #FF9900;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: #FF7F00;
+}
+

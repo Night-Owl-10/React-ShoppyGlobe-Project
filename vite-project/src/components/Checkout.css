@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.form h1 {
+    margin: 20px;
+}
+
+.name label {
+    font-size: x-large;
+    margin-right: 60px;
+}
+
+.name input {
+    width: 600px;
+    height: 30px;
+    margin: 20px;
+    font-weight: 300;
+    font-size: large;
+    padding: 20px;
+}
+
+.contact label {
+    font-size: x-large;
+}
+
+.contact input {
+    width: 600px;
+    height: 30px;
+    margin: 20px;
+    font-weight: 300;
+    font-size: large;
+    padding: 20px;
+}
+
+.email label {
+    font-size: x-large;
+    margin-right: 65px;
+}
+
+.email input {
+    width: 600px;
+    height: 30px;
+    margin: 20px;
+    font-weight: 300;
+    font-size: large;
+    padding: 20px;
+}
+
+.address label {
+    font-size: x-large;
+    margin-right: 40px;
+}
+
+.address input {
+    width: 600px;
+    height: 30px;
+    margin: 20px;
+    font-weight: 300;
+    font-size: large;
+    padding: 20px;
+}
+
+.pincode label {
+    font-size: x-large;
+    margin-right: 40px;
+}
+
+.pincode input {
+    width: 600px;
+    height: 30px;
+    margin: 20px;
+    font-weight: 300;
+    font-size: large;
+    padding: 20px;
+}
+
+.city label {
+    font-size: x-large;
+    margin-right: 85px;
+}
+
+.city input {
+    width: 600px;
+    height: 30px;
+    margin: 20px;
+    font-weight: 300;
+    font-size: large;
+    padding: 20px;
+}
+
+.state label {
+    font-size: x-large;
+    margin-right: 70px;
+}
+
+.state input {
+    width: 600px;
+    height: 30px;
+    margin: 20px;
+    font-weight: 300;
+    font-size: large;
+    padding: 20px;
+}
+
+.country label {
+    font-size: x-large;
+    margin-right: 40px;
+}
+
+.country input {
+    width: 600px;
+    height: 30px;
+    margin: 20px;
+    font-weight: 300;
+    font-size: large;
+    padding: 20px;
+}
+
+.order-btn {
+    width: 160px;
+    background-color: #FFB800;
+    font-weight: 700;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 40px;
+}
+
+.order-btn:hover {
+    background-color: #FF9E00;
+}
