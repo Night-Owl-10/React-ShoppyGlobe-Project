@@ -12,6 +12,8 @@ function ProductDetail() {
 
     const [index, setIndex] = useState(0);
 
+    const [next, setNext] = useState(1);
+
     const { data, error, loading} = useFetch("https://dummyjson.com/products");
 
     useEffect(() => {
@@ -34,6 +36,14 @@ function ProductDetail() {
 
      function handleNext() {
         index === 2 ? setIndex(0) : setIndex(index + 1);
+
+        if(product[0].images.length <= next) {
+            setNext(1)
+            console.log(next)
+        } else if(product[0].images.length > next) {
+            setNext(next + 1);
+            console.log(next)
+        }
     }
     
 
@@ -47,7 +57,7 @@ function ProductDetail() {
                     <div className="products-section" >
                     <div className="img-section">
                     <img src={product.images.length > 1 ? product.images[index] : product.images} alt="" width="200px" height="200px"/>
-                    <button onClick={handleNext}>next</button>
+                    <button onClick={handleNext}>Next image {next}/{product.images.length}</button>
                     <h1>{product.title}</h1>
                     <p className="products-rating">{product.rating} ☆</p>
                    <p className="products-stock">{product.availabilityStatus}</p>

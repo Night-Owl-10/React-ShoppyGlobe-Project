@@ -2,7 +2,10 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { clearCart } from "../utils/cartSlice";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import "./Checkout.css"
+import { toast } from 'react-toastify';
+
 
 function Checkout() {
 
@@ -29,6 +32,8 @@ const handleChange = (e) => {
         ...info, [name]: value
     });
 };
+
+const navigate = useNavigate()
 
 function handleSubmit(e) {
     e.preventDefault();
@@ -62,10 +67,11 @@ function handleSubmit(e) {
     }
 
     if (cartItem.length == 0) {
-        alert("You cannot placed order as your cart is empty.");
+        toast.error("You cannot placed order as your cart is empty.");
     }  else {
-        alert("Your order has been placed. Thank you, for shopping at ShoppyGlobe.")
+        toast.success("Your order has been placed. Thank you, for shopping at ShoppyGlobe.")
         dispatch(clearCart());
+        navigate("/")
     }
 }
 

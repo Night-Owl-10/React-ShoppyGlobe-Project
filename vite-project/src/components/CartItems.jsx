@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { faMinus } from '@fortawesome/free-solid-svg-icons'
+import { toast } from 'react-toastify';
+
 
 function CartItems() {
 
@@ -29,7 +31,7 @@ function CartItems() {
       const handleButtonClick = (e) => {
         if (cartItems.length == 0) {
           e.preventDefault(); 
-          alert('Your Cart is Empty');
+          toast.error('Your Cart is Empty');
         } else {
           navigate('/checkout'); 
         }

@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     transition: transform 0.2s;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .product-card:hover {
@@ -62,7 +62,7 @@
 }
 
 .next-btn {
-    width: 35%;
+    width: 40%;
     margin-bottom: 10px;
     background-color: #FFB800;
     cursor: pointer;

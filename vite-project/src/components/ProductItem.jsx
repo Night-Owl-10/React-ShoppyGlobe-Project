@@ -7,9 +7,18 @@ import { addItem } from "../utils/cartSlice";
 function ProductItem(props) {
 
     const [index, setIndex] = useState(0);
+    const [next, setNext] = useState(1);
 
     function handleNext() {
         index === 2 ? setIndex(0) : setIndex(index + 1);
+
+        if(props.productDetails.images.length <= next) {
+            setNext(1)
+            console.log(next)
+        } else if(props.productDetails.images.length > next) {
+            setNext(next + 1);
+            console.log(next)
+        }
     }
 
     const dispatch = useDispatch();
@@ -34,7 +43,7 @@ function ProductItem(props) {
             <p className="product-price">₹ {props.productDetails.price}</p>
             </Link>
             <div className="btns">
-            <button className="next-btn" onClick={handleNext}>next Image</button>
+            <button className="next-btn" onClick={handleNext}>Next image {next}/{props.productDetails.images.length}</button>
             <button className="add-btn" onClick={() => handleAddBook(props.productDetails)}>Add to Cart</button>
             </div>
         </div>

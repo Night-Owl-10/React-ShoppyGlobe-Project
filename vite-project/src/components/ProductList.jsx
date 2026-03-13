@@ -9,44 +9,40 @@ function ProductList() {
 
     const [searchProduct, setSearchProduct] = useState("");
     const [filteredProducts, setFilteredProducts] = useState([]);
+    const [allProducts, setAllProducts] = useState([]); 
   
-    function handleSearch() {
-        const filterProducts = filteredProducts.filter(product => product.title.toLowerCase().includes(searchProduct.toLowerCase()));
-        setFilteredBooks(filterProducts);
-    }
-
-    console.log(filteredProducts);
-
     const { data, error, loading} = useFetch("https://dummyjson.com/products");
 
     useEffect(() => {
         if (data) {
+            setAllProducts(data.products);
             setFilteredProducts(data.products);
         }
      }, [data]);
 
-     if (error) {
+    useEffect(() => {
+        if (searchProduct.trim() === "") {
+            setFilteredProducts(allProducts);
+        } else {
+            const filterProducts = allProducts.filter(product => product.title.toLowerCase().includes(searchProduct.toLowerCase()));
+            setFilteredProducts(filterProducts);
+        }
+    }, [searchProduct, allProducts]);
+
+    if (error) {
         return <p>{error}</p>
      }
 
      if (loading) {
         return <p>Loading...</p>
      }
-
-    /*async function fetchData() {
-       const response = await fetch("https://dummyjson.com/products");
-       const result = await response.json();
-       console.log(result);
-
-       setFilteredBooks(result.products);
-    }*/
     
     return(
 
         <>
         <div className="search">
-                <input type="text" className="search-input" placeholder="Search for products here" onChange={(e) => setSearchProduct(e.target.value)}/>
-                <button className="search-btn" onClick={handleSearch}><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
+                <input type="text" className="search-input" placeholder="Search for products here" value={searchProduct} onChange={(e) => setSearchProduct(e.target.value)}/>
+                <button className="search-btn" onClick={() => {}}><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
         </div>
 
         <div className="productList">
