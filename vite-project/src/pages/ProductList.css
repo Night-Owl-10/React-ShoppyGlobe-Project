@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.productList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.search-input {
+    width: 600px;
+    height: 30px;
+    font-weight: 300;
+    font-size: large;
+    border-radius: 5px 0 0 5px;
+    padding: 20px;
+    border-right: none;
+}
+
+.search-btn {
+    width: 60px;
+    height: 40px;
+    font-size: 18px;
+    border-radius: 0px 5px 5px 0;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-left: none;
+    background-color: #FF9900;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: #FF7F00;
+}
+
+/* ── Responsive ── */
+
+/* ≤ 320px */
+@media (max-width: 320px) {
+    .search-input {
+        width: 220px;
+        font-size: small;
+        padding: 8px;
+        height: 36px;
+    }
+
+    .search-btn {
+        width: 40px;
+        height: 36px;
+        font-size: 14px;
+        padding: 0;
+    }
+}
+
+/* 321px – 425px */
+@media (min-width: 320px) and (max-width: 425px) {
+    .search-input {
+        width: 270px;
+        font-size: small;
+        padding: 8px;
+        height: 38px;
+    }
+
+    .search-btn {
+        width: 44px;
+        height: 38px;
+        font-size: 15px;
+        padding: 0;
+    }
+}
+
+/* 426px – 640px */
+@media (min-width: 425px) and (max-width: 640px) {
+    .search-input {
+        width: calc(100% - 110px);
+        padding: 8px 14px;
+        height: 40px;
+    }
+
+    .search-btn {
+        width: 50px;
+        height: 40px;
+        padding: 0;
+    }
+}
+
+/* 641px – 768px */
+@media (min-width: 640px) and (max-width: 768px) {
+    .search-input {
+        width: 480px;
+    }
+}
+
+/* 769px – 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .search-input {
+        width: 540px;
+    }
+}

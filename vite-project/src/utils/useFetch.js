@@ -12,18 +12,18 @@ function useFetch(url) {
                 const response = await fetch(url);
                 const result = await response.json();
                 setData(result);
-            } catch(err) {
+            } catch (err) {
                 setError(err);
             } finally {
                 setLoading(false);
             }
-            
-        };
-        
-        fetchData();
-    }, [])
 
-    return {data, loading, error}
+        };
+
+        fetchData();
+    }, [url])
+
+    return { data, loading, error }
 }
 
 export default useFetch;

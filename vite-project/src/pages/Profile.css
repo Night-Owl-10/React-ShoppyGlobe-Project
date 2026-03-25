@@ -1,0 +1,551 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.back-btn {
+    background-color: #FFB800;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.back-btn:hover {
+    background-color: #FF9E00;
+}
+
+
+.profile h1 {
+    margin-bottom: 20px;
+}
+
+
+.avatarContainer {
+    height: 192px;
+    width: 192px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+
+.avatarImage {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.avatarUploadLabel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    cursor: pointer;
+    color: white;
+}
+
+.avatarContainer:hover .avatarUploadLabel {
+    opacity: 1;
+}
+
+.avatarUploadInput {
+    display: none;
+}
+
+.loader {
+    position: absolute;
+    top: 45%;
+    right: 45%;
+    opacity: 1;
+    color: rgba(255, 255, 255, 0.533);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.profile .name,
+.profile .contact,
+.profile .email,
+.profile .address,
+.profile .pincode,
+.profile .city,
+.profile .state,
+.profile .country {
+    display: flex;
+    align-items: center;
+}
+
+.profile .name label,
+.profile .contact label,
+.profile .email label,
+.profile .address label,
+.profile .pincode label,
+.profile .city label,
+.profile .state label,
+.profile .country label {
+    font-size: x-large;
+    min-width: 150px;
+}
+
+
+.profile .name input,
+.profile .contact input,
+.profile .email input,
+.profile .address input,
+.profile .pincode input,
+.profile .city input,
+.profile .state input,
+.profile .country input {
+    width: 600px;
+    margin: 20px;
+    font-weight: 300;
+    font-size: large;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 2px;
+    transition: border-bottom-color 0.3s ease;
+
+    &:focus {
+        outline: none;
+        border-bottom-color: #9e9c9c;
+    }
+}
+
+
+.profile .name span,
+.profile .contact span,
+.profile .email span,
+.profile .address span,
+.profile .pincode span,
+.profile .city span,
+.profile .state span,
+.profile .country span {
+    width: 600px;
+    margin: 20px;
+    font-size: large;
+    font-weight: 300;
+}
+
+
+.profile .name button,
+.profile .contact button,
+.profile .email button,
+.profile .address button,
+.profile .pincode button,
+.profile .city button,
+.profile .state button,
+.profile .country button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: large;
+    color: #555;
+    padding: 4px 8px;
+}
+
+.profile .name button:hover,
+.profile .contact button:hover,
+.profile .email button:hover,
+.profile .address button:hover,
+.profile .pincode button:hover,
+.profile .city button:hover,
+.profile .state button:hover,
+.profile .country button:hover {
+    color: #FFB800;
+}
+
+
+.update-btn {
+    width: 160px;
+    background-color: #FFB800;
+    font-weight: 700;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    margin: 40px 0px 40px 0px;
+    font-size: medium;
+    border: 2px solid #000000;
+}
+
+.update-btn:hover {
+    background-color: #FF9E00;
+}
+
+.profile-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.delete-btn {
+    background-color: #ff2f00f6;
+    font-weight: 700;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    margin: 40px 0px 40px 0px;
+    font-size: medium;
+    border: 2px solid #000000;
+}
+
+.delete-btn:hover {
+    background-color: #ff0000ae;
+}
+
+/* ── Responsive ── */
+
+/* ≤ 320px */
+@media (max-width: 320px) {
+    .avatarContainer {
+        width: 120px;
+        height: 120px;
+        margin-left: 0;
+        align-self: center;
+    }
+
+    .profile h1 {
+        font-size: 1.5rem;
+    }
+
+    .profile .name,
+    .profile .contact,
+    .profile .email,
+    .profile .address,
+    .profile .pincode,
+    .profile .city,
+    .profile .state,
+    .profile .country {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile .name label,
+    .profile .contact label,
+    .profile .email label,
+    .profile .address label,
+    .profile .pincode label,
+    .profile .city label,
+    .profile .state label,
+    .profile .country label {
+        font-size: medium;
+        min-width: unset;
+    }
+
+    .profile .name input,
+    .profile .contact input,
+    .profile .email input,
+    .profile .address input,
+    .profile .pincode input,
+    .profile .city input,
+    .profile .state input,
+    .profile .country input {
+        width: 100%;
+        margin: 6px 0;
+        font-size: medium;
+    }
+
+    .profile .name span,
+    .profile .contact span,
+    .profile .email span,
+    .profile .address span,
+    .profile .pincode span,
+    .profile .city span,
+    .profile .state span,
+    .profile .country span {
+        width: 100%;
+        margin: 6px 0;
+        font-size: medium;
+    }
+
+    .profile .name button,
+    .profile .contact button,
+    .profile .email button,
+    .profile .address button,
+    .profile .pincode button,
+    .profile .city button,
+    .profile .state button,
+    .profile .country button {
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: small;
+        margin: 5px 0 20px 0;
+    }
+
+    .profile-btn {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .update-btn,
+    .delete-btn {
+        width: 140px;
+        margin: 15px 0;
+        font-size: small;
+    }
+
+    .back-btn {
+        margin: 15px;
+    }
+}
+
+/* 321px – 425px */
+@media (min-width: 320px) and (max-width: 425px) {
+    .avatarContainer {
+        width: 140px;
+        height: 140px;
+        margin-left: 0;
+        align-self: center;
+    }
+
+    .profile h1 {
+        font-size: 1.7rem;
+    }
+
+    .profile .name,
+    .profile .contact,
+    .profile .email,
+    .profile .address,
+    .profile .pincode,
+    .profile .city,
+    .profile .state,
+    .profile .country {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile .name label,
+    .profile .contact label,
+    .profile .email label,
+    .profile .address label,
+    .profile .pincode label,
+    .profile .city label,
+    .profile .state label,
+    .profile .country label {
+        font-size: large;
+        min-width: unset;
+    }
+
+    .profile .name input,
+    .profile .contact input,
+    .profile .email input,
+    .profile .address input,
+    .profile .pincode input,
+    .profile .city input,
+    .profile .state input,
+    .profile .country input {
+        width: 100%;
+        margin: 8px 0;
+        font-size: medium;
+    }
+
+    .profile .name span,
+    .profile .contact span,
+    .profile .email span,
+    .profile .address span,
+    .profile .pincode span,
+    .profile .city span,
+    .profile .state span,
+    .profile .country span {
+        width: 100%;
+        margin: 8px 0;
+        font-size: medium;
+    }
+
+    .profile .name button,
+    .profile .contact button,
+    .profile .email button,
+    .profile .address button,
+    .profile .pincode button,
+    .profile .city button,
+    .profile .state button,
+    .profile .country button {
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: medium;
+        margin: 5px 0 25px 0;
+    }
+
+    .profile-btn {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .update-btn,
+    .delete-btn {
+        width: 150px;
+        margin: 20px 0;
+        font-size: medium;
+    }
+}
+
+/* 426px – 640px */
+@media (min-width: 425px) and (max-width: 640px) {
+    .avatarContainer {
+        width: 155px;
+        height: 155px;
+        margin-left: 10px;
+    }
+
+    .profile h1 {
+        font-size: 1.6rem;
+    }
+
+    .profile .name,
+    .profile .contact,
+    .profile .email,
+    .profile .address,
+    .profile .pincode,
+    .profile .city,
+    .profile .state,
+    .profile .country {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile .name label,
+    .profile .contact label,
+    .profile .email label,
+    .profile .address label,
+    .profile .pincode label,
+    .profile .city label,
+    .profile .state label,
+    .profile .country label {
+        font-size: large;
+        min-width: unset;
+    }
+
+    .profile .name input,
+    .profile .contact input,
+    .profile .email input,
+    .profile .address input,
+    .profile .pincode input,
+    .profile .city input,
+    .profile .state input,
+    .profile .country input {
+        width: 100%;
+        margin: 8px 0;
+        font-size: medium;
+    }
+
+    .profile .name span,
+    .profile .contact span,
+    .profile .email span,
+    .profile .address span,
+    .profile .pincode span,
+    .profile .city span,
+    .profile .state span,
+    .profile .country span {
+        width: 100%;
+        margin: 8px 0;
+        font-size: medium;
+    }
+
+    .profile .name button,
+    .profile .contact button,
+    .profile .email button,
+    .profile .address button,
+    .profile .pincode button,
+    .profile .city button,
+    .profile .state button,
+    .profile .country button {
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: medium;
+        margin: 5px 0 25px 0;
+    }
+}
+
+/* 641px – 768px */
+@media (min-width: 640px) and (max-width: 768px) {
+
+    .profile .name input,
+    .profile .contact input,
+    .profile .email input,
+    .profile .address input,
+    .profile .pincode input,
+    .profile .city input,
+    .profile .state input,
+    .profile .country input {
+        width: 380px;
+    }
+
+    .profile .name span,
+    .profile .contact span,
+    .profile .email span,
+    .profile .address span,
+    .profile .pincode span,
+    .profile .city span,
+    .profile .state span,
+    .profile .country span {
+        width: 380px;
+    }
+}
+
+/* 769px – 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .profile .name input,
+    .profile .contact input,
+    .profile .email input,
+    .profile .address input,
+    .profile .pincode input,
+    .profile .city input,
+    .profile .state input,
+    .profile .country input {
+        width: 480px;
+    }
+
+    .profile .name span,
+    .profile .contact span,
+    .profile .email span,
+    .profile .address span,
+    .profile .pincode span,
+    .profile .city span,
+    .profile .state span,
+    .profile .country span {
+        width: 480px;
+    }
+}

@@ -46,7 +46,7 @@
     background-color: blue;
     color: white;
     margin-bottom: 10px;
-} 
+}
 
 .product-price {
     color: black;
@@ -81,8 +81,120 @@
     padding: 5px;
     cursor: pointer;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 .add-btn:hover {
     background-color: #FF9E00;
+}
+
+/* ── Responsive ── */
+
+/* ≤ 320px */
+@media (max-width: 320px) {
+    .product-card {
+        width: 100%;
+        height: auto;
+        margin: 10px 5px;
+    }
+
+    .product-card:hover {
+        transform: none;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .product-title {
+        font-size: 0.85em;
+    }
+
+    .product-price {
+        font-size: medium;
+    }
+
+    .next-btn {
+        width: 60%;
+    }
+
+    .add-btn {
+        width: 80%;
+        font-size: 0.8em;
+    }
+}
+
+/* 321px – 425px */
+@media (min-width: 320px) and (max-width: 425px) {
+    .product-card {
+        width: 100%;
+        height: auto;
+        margin: 10px 8px;
+    }
+
+    .product-card:hover {
+        transform: none;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .product-title {
+        font-size: 0.9em;
+    }
+
+    .next-btn {
+        width: 55%;
+    }
+
+    .add-btn {
+        width: 75%;
+    }
+}
+
+
+
+/* 426px – 640px */
+@media (min-width: 425px) and (max-width: 640px) {
+    .product-card {
+        width: 45%;
+        height: auto;
+        margin: 10px;
+    }
+
+    .product-title {
+        font-size: 0.95em;
+    }
+
+    .next-btn {
+        width: 50%;
+    }
+
+    .add-btn {
+        width: 70%;
+    }
+}
+
+/* 641px – 768px */
+@media (min-width: 640px) and (max-width: 768px) {
+    .product-card {
+        width: 220px;
+        height: auto;
+        margin: 12px;
+    }
+
+    .next-btn {
+        width: 45%;
+    }
+
+    .add-btn {
+        width: 65%;
+    }
+}
+
+/* 769px – 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .product-card {
+        width: 240px;
+        height: auto;
+        margin: 15px;
+    }
 }

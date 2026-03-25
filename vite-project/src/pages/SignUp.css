@@ -1,0 +1,419 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.profilePicDiv {
+    height: 192px;
+    width: 192px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+
+.profile-pic {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.upload-pic-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    cursor: pointer;
+    color: white;
+
+}
+
+.profilePicDiv:hover .upload-pic-label {
+    opacity: 1;
+}
+
+.upload-pic-input {
+    display: none;
+}
+
+
+.form h1 {
+    margin-bottom: 20px;
+}
+
+.name label {
+    font-size: x-large;
+    margin-right: 60px;
+}
+
+.name input {
+    width: 600px;
+    height: 30px;
+    margin: 20px;
+    font-weight: 300;
+    font-size: large;
+    padding: 20px;
+}
+
+.contact label {
+    font-size: x-large;
+}
+
+.contact input {
+    width: 600px;
+    height: 30px;
+    margin: 20px;
+    font-weight: 300;
+    font-size: large;
+    padding: 20px;
+}
+
+.email label {
+    font-size: x-large;
+    margin-right: 65px;
+}
+
+.email input {
+    width: 600px;
+    height: 30px;
+    margin: 20px;
+    font-weight: 300;
+    font-size: large;
+    padding: 20px;
+}
+
+.address label {
+    font-size: x-large;
+    margin-right: 40px;
+}
+
+.address input {
+    width: 600px;
+    height: 30px;
+    margin: 20px;
+    font-weight: 300;
+    font-size: large;
+    padding: 20px;
+}
+
+.pincode label {
+    font-size: x-large;
+    margin-right: 40px;
+}
+
+.pincode input {
+    width: 600px;
+    height: 30px;
+    margin: 20px;
+    font-weight: 300;
+    font-size: large;
+    padding: 20px;
+}
+
+.city label {
+    font-size: x-large;
+    margin-right: 85px;
+}
+
+.city input {
+    width: 600px;
+    height: 30px;
+    margin: 20px;
+    font-weight: 300;
+    font-size: large;
+    padding: 20px;
+}
+
+.state label {
+    font-size: x-large;
+    margin-right: 70px;
+}
+
+.state input {
+    width: 600px;
+    height: 30px;
+    margin: 20px;
+    font-weight: 300;
+    font-size: large;
+    padding: 20px;
+}
+
+.country label {
+    font-size: x-large;
+    margin-right: 40px;
+}
+
+.country input {
+    width: 600px;
+    height: 30px;
+    margin: 20px;
+    font-weight: 300;
+    font-size: large;
+    padding: 20px;
+}
+
+.password label {
+    font-size: x-large;
+    margin-right: 20px;
+}
+
+.password input {
+    width: 600px;
+    height: 30px;
+    margin: 20px;
+    font-weight: 300;
+    font-size: large;
+    padding: 20px;
+}
+
+.signup-btns {
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+    align-items: center;
+    margin: 40px 0px;
+    padding-left: 150px;
+}
+
+.signup-btn {
+    width: 160px;
+    background-color: #FFB800;
+    font-weight: 700;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.signup-btn:hover {
+    background-color: #FF9E00;
+}
+
+.loader {
+    position: absolute;
+    top: 45%;
+    right: 45%;
+    opacity: 1;
+    color: rgba(255, 255, 255, 0.533);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ── Responsive ── */
+
+/* ≤ 320px */
+@media (max-width: 320px) {
+    .profilePicDiv {
+        width: 120px;
+        height: 120px;
+        margin-left: 0;
+        align-self: center;
+    }
+
+    .name label,
+    .contact label,
+    .email label,
+    .address label,
+    .pincode label,
+    .city label,
+    .state label,
+    .country label,
+    .password label {
+        font-size: large;
+        margin-right: 0;
+    }
+
+    .name,
+    .contact,
+    .email,
+    .address,
+    .pincode,
+    .city,
+    .state,
+    .country,
+    .password {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .name input,
+    .contact input,
+    .email input,
+    .address input,
+    .pincode input,
+    .city input,
+    .state input,
+    .country input,
+    .password input {
+        width: 100%;
+        margin: 8px 0;
+        font-size: medium;
+    }
+
+    .signup-btns {
+        padding-left: 0;
+        justify-content: center;
+    }
+
+    .form h1 {
+        font-size: 1.1rem;
+    }
+}
+
+/* 321px – 425px */
+@media (min-width: 320px) and (max-width: 425px) {
+    .profilePicDiv {
+        width: 140px;
+        height: 140px;
+        margin-left: 0;
+        align-self: center;
+    }
+
+    .name label,
+    .contact label,
+    .email label,
+    .address label,
+    .pincode label,
+    .city label,
+    .state label,
+    .country label,
+    .password label {
+        font-size: large;
+        margin-right: 0;
+    }
+
+    .name,
+    .contact,
+    .email,
+    .address,
+    .pincode,
+    .city,
+    .state,
+    .country,
+    .password {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .name input,
+    .contact input,
+    .email input,
+    .address input,
+    .pincode input,
+    .city input,
+    .state input,
+    .country input,
+    .password input {
+        width: 100%;
+        margin: 8px 0;
+    }
+
+    .signup-btns {
+        padding-left: 0;
+        justify-content: center;
+    }
+}
+
+/* 426px – 640px */
+@media (min-width: 425px) and (max-width: 640px) {
+    .profilePicDiv {
+        width: 155px;
+        height: 155px;
+        margin-left: 10px;
+    }
+
+    .name,
+    .contact,
+    .email,
+    .address,
+    .pincode,
+    .city,
+    .state,
+    .country,
+    .password {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .name input,
+    .contact input,
+    .email input,
+    .address input,
+    .pincode input,
+    .city input,
+    .state input,
+    .country input,
+    .password input {
+        width: 100%;
+        margin: 8px 0;
+    }
+
+    .signup-btns {
+        padding-left: 0;
+    }
+}
+
+/* 641px – 768px */
+@media (min-width: 640px) and (max-width: 768px) {
+
+    .name input,
+    .contact input,
+    .email input,
+    .address input,
+    .pincode input,
+    .city input,
+    .state input,
+    .country input,
+    .password input {
+        width: 380px;
+    }
+
+    .signup-btns {
+        padding-left: 50px;
+    }
+}
+
+/* 769px – 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .name input,
+    .contact input,
+    .email input,
+    .address input,
+    .pincode input,
+    .city input,
+    .state input,
+    .country input,
+    .password input {
+        width: 480px;
+    }
+
+    .signup-btns {
+        padding-left: 100px;
+    }
+}
