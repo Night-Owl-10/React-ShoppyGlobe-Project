@@ -91,9 +91,7 @@
     background-color: #FF9E00;
 }
 
-/* ── Responsive ── */
 
-/* ≤ 320px */
 @media (max-width: 320px) {
     .product-card {
         width: 100%;
@@ -124,7 +122,6 @@
     }
 }
 
-/* 321px – 425px */
 @media (min-width: 320px) and (max-width: 425px) {
     .product-card {
         width: 100%;
@@ -152,7 +149,6 @@
 
 
 
-/* 426px – 640px */
 @media (min-width: 425px) and (max-width: 640px) {
     .product-card {
         width: 45%;
@@ -173,7 +169,7 @@
     }
 }
 
-/* 641px – 768px */
+
 @media (min-width: 640px) and (max-width: 768px) {
     .product-card {
         width: 220px;
@@ -190,7 +186,7 @@
     }
 }
 
-/* 769px – 1024px */
+
 @media (min-width: 768px) and (max-width: 1024px) {
     .product-card {
         width: 240px;

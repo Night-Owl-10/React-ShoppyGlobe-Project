@@ -116,9 +116,6 @@
     text-decoration: underline;
 }
 
-/* ── Responsive ── */
-
-/* ≤ 320px */
 @media (max-width: 320px) {
     .signin-container {
         width: 290px;
@@ -140,7 +137,6 @@
     }
 }
 
-/* 321px – 425px */
 @media (min-width: 321px) and (max-width: 425px) {
     .signin-container {
         width: 330px;
@@ -156,7 +152,6 @@
     }
 }
 
-/* 426px – 640px */
 @media (min-width: 426px) and (max-width: 640px) {
     .signin-container {
         width: 360px;

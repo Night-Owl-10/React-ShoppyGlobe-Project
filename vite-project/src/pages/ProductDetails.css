@@ -130,7 +130,6 @@
     background-color: #FF9E00;
 }
 
-/* ── Product meta (rating / stock / price / discount) default: column ── */
 .product-meta {
     display: flex;
     flex-direction: column;
@@ -139,9 +138,6 @@
     margin-bottom: 10px;
 }
 
-/* ── Responsive ── */
-
-/* ≤ 320px */
 @media (max-width: 320px) {
     .products-section {
         grid-template-columns: 1fr;
@@ -197,7 +193,6 @@
     }
 }
 
-/* 320px – 425px */
 @media (min-width: 320px) and (max-width: 425px) {
     .products-section {
         grid-template-columns: 1fr;
@@ -253,7 +248,6 @@
     }
 }
 
-/* 425px – 640px */
 @media (min-width: 425px) and (max-width: 640px) {
     .products-section {
         grid-template-columns: 1fr;
@@ -298,7 +292,6 @@
         font-size: 0.92rem;
     }
 
-    /* meta items side-by-side */
     .product-meta {
         flex-direction: row;
         flex-wrap: wrap;
@@ -313,7 +306,6 @@
     }
 }
 
-/* 640px – 768px */
 @media (min-width: 640px) and (max-width: 768px) {
     .products-section {
         grid-template-columns: 1fr;
@@ -344,7 +336,6 @@
     }
 }
 
-/* 768px – 1024px */
 @media (min-width: 768px) and (max-width: 1024px) {
     .img-section img {
         width: 400px !important;

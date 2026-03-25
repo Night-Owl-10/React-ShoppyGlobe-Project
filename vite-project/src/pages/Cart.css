@@ -150,9 +150,7 @@
     background-color: #FF9E00;
 }
 
-/* ── Responsive ── */
 
-/* ≤ 320px */
 @media (max-width: 320px) {
     .checkout-section {
         flex-direction: column;
@@ -194,7 +192,7 @@
     }
 }
 
-/* 321px – 425px */
+
 @media (min-width: 320px) and (max-width: 425px) {
     .checkout-section {
         flex-direction: column;
@@ -227,7 +225,6 @@
     }
 }
 
-/* 426px – 640px */
 @media (min-width: 425px) and (max-width: 640px) {
     .checkout-section {
         flex-direction: column;
@@ -251,7 +248,6 @@
     }
 }
 
-/* 641px – 768px */
 @media (min-width: 640px) and (max-width: 768px) {
     .checkout-img img {
         width: 200px !important;
@@ -271,7 +267,6 @@
     }
 }
 
-/* 769px – 1024px */
 @media (min-width: 768px) and (max-width: 1024px) {
     .checkout-img img {
         width: 240px !important;
