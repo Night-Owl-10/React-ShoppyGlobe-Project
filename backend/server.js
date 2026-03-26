@@ -4,7 +4,8 @@ import cors from "cors";
 import userRoutes from "./Routes/userRoutes.js";
 import cartRoutes from "./Routes/cartRoutes.js";
 import cookieParser from "cookie-parser";
-
+import dotenv from "dotenv";
+dotenv.config();
 
 const PORT = 3000;
 const app = express();
