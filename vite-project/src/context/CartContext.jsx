@@ -14,7 +14,7 @@ export function CartProvider({ children }) {
             return;
         }
         try {
-            const response = await axios.get("http://localhost:3000/api/cart", { withCredentials: true });
+            const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/cart`, { withCredentials: true });
             setCartItems(response.data.cartItems);
         } catch (error) {
             console.log("Error fetching cart:", error);

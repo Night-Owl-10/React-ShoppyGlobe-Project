@@ -25,7 +25,7 @@ function SignIn({ setShowSignIn }) {
     async function handleLogin(e) {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:3000/api/user/login", loginInfo, { withCredentials: true });
+            const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/user/login`, loginInfo, { withCredentials: true });
             console.log(response.data);
             toast.success(response.data.message);
             setShowSignIn(false);

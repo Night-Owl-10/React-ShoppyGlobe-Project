@@ -75,7 +75,7 @@ function SignUp() {
         }
 
         try {
-            const response = await axios.post("http://localhost:3000/api/user/register", info, { withCredentials: true });
+            const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/user/register`, info, { withCredentials: true });
             console.log(response.data);
             toast.success(response.data.message);
             navigate("/");
@@ -93,7 +93,7 @@ function SignUp() {
         data.append("file", img ? img[0] : "");
         data.append("upload_preset", "ShoppyGlobe");
         try {
-            const response = await axios.post("https://api.cloudinary.com/v1_1/dru7e6cnq/image/upload", data)
+            const response = await axios.post(`https://api.cloudinary.com/v1_1/${import.meta.env.VITE_CLOUD_NAME}/image/upload`, data)
             const imageUrl = response.data.url
             setSelectedImage(imageUrl)
             setInfo({ ...info, avatar: imageUrl });

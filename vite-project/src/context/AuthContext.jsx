@@ -12,7 +12,7 @@ export function AuthProvider({ children }) {
 
         async function validateSession() {
             try {
-                const response = await axios.get("http://localhost:3000/api/user/me", {
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/user/me`, {
                     withCredentials: true,
                 });
                 setUser(response.data.user);

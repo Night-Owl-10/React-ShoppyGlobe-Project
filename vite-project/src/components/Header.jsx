@@ -22,7 +22,7 @@ function Header() {
     async function handleSignOut() {
 
         try {
-            const response = await axios.post("http://localhost:3000/api/user/logout", {}, { withCredentials: true });
+            const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/user/logout`, {}, { withCredentials: true });
             toast.success(response.data.message);
             localStorage.removeItem("user");
             localStorage.removeItem("token");

@@ -15,7 +15,7 @@ function Cart() {
 
   async function handleRemoveProduct(cartItemId) {
     try {
-      const response = await axios.delete("http://localhost:3000/api/cart/" + cartItemId, { withCredentials: true });
+      const response = await axios.delete(`${import.meta.env.VITE_API_URL}/api/cart/` + cartItemId, { withCredentials: true });
       toast.success(response.data.message);
       fetchCart();
     } catch (error) {
@@ -25,7 +25,7 @@ function Cart() {
 
   async function handleIncreaseQuantity(cartItemId) {
     try {
-      await axios.put("http://localhost:3000/api/cart/" + cartItemId + "/increase", {}, { withCredentials: true });
+      await axios.put(`${import.meta.env.VITE_API_URL}/api/cart/` + cartItemId + "/increase", {}, { withCredentials: true });
       fetchCart();
     } catch (error) {
       toast.error(error.response?.data?.message || "Error updating quantity");
@@ -34,7 +34,7 @@ function Cart() {
 
   async function handleDecreaseQuantity(cartItemId) {
     try {
-      await axios.put("http://localhost:3000/api/cart/" + cartItemId + "/decrease", {}, { withCredentials: true });
+      await axios.put(`${import.meta.env.VITE_API_URL}/api/cart/` + cartItemId + "/decrease", {}, { withCredentials: true });
       fetchCart();
     } catch (error) {
       toast.error(error.response?.data?.message || "Error updating quantity");
@@ -48,7 +48,7 @@ function Cart() {
       return;
     }
     try {
-      const response = await axios.delete("http://localhost:3000/api/cart/confirm", { withCredentials: true });
+      const response = await axios.delete(`${import.meta.env.VITE_API_URL}/api/cart/confirm`, { withCredentials: true });
       fetchCart();
       toast.success(response.data.message);
     } catch (error) {

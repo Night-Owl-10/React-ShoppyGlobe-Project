@@ -53,7 +53,7 @@ function Profile() {
         data.append("file", img ? img[0] : "");
         data.append("upload_preset", "ShoppyGlobe");
         try {
-            const response = await axios.post("https://api.cloudinary.com/v1_1/dru7e6cnq/image/upload", data)
+            const response = await axios.post(`https://api.cloudinary.com/v1_1/${import.meta.env.VITE_CLOUD_NAME}/image/upload`, data)
             const imageUrl = response.data.url
             setProfileAvatar(imageUrl)
             setEditedUser(prev => ({ ...prev, avatar: imageUrl }));
@@ -96,7 +96,7 @@ function Profile() {
             return;
         }
         try {
-            const response = await axios.put("http://localhost:3000/api/user/" + user._id, editedUser, { withCredentials: true });
+            const response = await axios.put(`${import.meta.env.VITE_API_URL}/api/user/` + user._id, editedUser, { withCredentials: true });
             localStorage.setItem("user", JSON.stringify(response.data.updatedUser));
             setUser(response.data.updatedUser);
             toast.success(response.data.message);
@@ -108,7 +108,7 @@ function Profile() {
 
     async function handleDeleteAccount() {
         try {
-            const response = await axios.delete("http://localhost:3000/api/user/" + user._id, { withCredentials: true });
+            const response = await axios.delete(`${import.meta.env.VITE_API_URL}/api/user/` + user._id, { withCredentials: true });
             localStorage.removeItem("user");
             localStorage.removeItem("token");
             setUser(null);

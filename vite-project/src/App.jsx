@@ -9,7 +9,10 @@ import axios from "axios";
 
 axios.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
-  if (token) {
+  const isApiRequest = config.url.startsWith(import.meta.env.VITE_API_URL) || config.url.startsWith("http://localhost:3000") || !config.url.startsWith("http");
+  const isCloudinary = config.url.includes("cloudinary.com");
+
+  if (token && isApiRequest && !isCloudinary) {
     config.headers.Authorization = `Bearer ${token}`;
   }
   return config;

@@ -35,7 +35,7 @@ function ProductItem(props) {
         }
         try {
             const { id: productId, title, price, thumbnail } = props.productDetails;
-            await axios.post("http://localhost:3000/api/cart", { productId, title, price, thumbnail }, { withCredentials: true });
+            await axios.post(`${import.meta.env.VITE_API_URL}/api/cart`, { productId, title, price, thumbnail }, { withCredentials: true });
             toast.success(`"${title}" added to cart!`);
             fetchCart();
         } catch (error) {
