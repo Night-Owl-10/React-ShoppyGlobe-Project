@@ -20,6 +20,8 @@ axios.interceptors.request.use((config) => {
 
 function App() {
 
+  //ShoppyGlobe Project
+
   return (
     <AuthProvider>
       <CartProvider>
