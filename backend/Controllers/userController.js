@@ -2,7 +2,7 @@ import User from "../Models/userModel.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
-const cookieSettings = { httpOnly: true, secure: false, sameSite: "lax", maxAge: 3600000 }
+const cookieSettings = { httpOnly: true, secure: false, sameSite: "lax", maxAge: parseInt(process.env.COOKIE_EXPIRES_IN) || 3600000 }
 
 export const registerUser = async (req, res) => {
     try {
@@ -71,7 +71,7 @@ export const loginUser = async (req, res) => {
             return res.status(400).json({ message: "Invalid password" });
         }
 
-        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET_KEY, { expiresIn: "1h" });
+        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET_KEY, { expiresIn: process.env.JWT_EXPIRES_IN || "1h" });
         res.cookie("token", token, cookieSettings);
         res.status(200).json({ message: "User logged in successfully", user });
     } catch (error) {
