@@ -30,6 +30,7 @@ function SignIn({ setShowSignIn }) {
             toast.success(response.data.message);
             setShowSignIn(false);
             localStorage.setItem("user", JSON.stringify(response.data.user));
+            localStorage.setItem("token", response.data.token);
             setUser(response.data.user);
         } catch (error) {
             console.error("Error logging in:", error);

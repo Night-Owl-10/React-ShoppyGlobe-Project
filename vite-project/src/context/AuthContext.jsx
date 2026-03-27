@@ -19,6 +19,7 @@ export function AuthProvider({ children }) {
                 localStorage.setItem("user", JSON.stringify(response.data.user));
             } catch {
                 localStorage.removeItem("user");
+                localStorage.removeItem("token");
                 setUser(null);
             }
         }

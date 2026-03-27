@@ -110,6 +110,7 @@ function Profile() {
         try {
             const response = await axios.delete("http://localhost:3000/api/user/" + user._id, { withCredentials: true });
             localStorage.removeItem("user");
+            localStorage.removeItem("token");
             setUser(null);
             toast.success(response.data.message);
             navigate("/");

@@ -25,6 +25,7 @@ function Header() {
             const response = await axios.post("http://localhost:3000/api/user/logout", {}, { withCredentials: true });
             toast.success(response.data.message);
             localStorage.removeItem("user");
+            localStorage.removeItem("token");
             setUser(null);
         } catch (error) {
             toast.error("Error signing out. Please try again.");

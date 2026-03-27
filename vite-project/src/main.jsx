@@ -18,27 +18,27 @@ const appRouter = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/",
+        index: true,
         element: <Suspense fallback={<div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", fontSize: "24px", fontWeight: "bold", color: "#333" }}>Loading...</div>}><ProductList /></Suspense>
       },
 
       {
-        path: "/cart",
+        path: "cart",
         element: <Suspense fallback={<div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", fontSize: "24px", fontWeight: "bold", color: "#333" }}>Loading...</div>}><Cart /></Suspense>
       },
 
       {
-        path: "/signup",
+        path: "signup",
         element: <Suspense fallback={<div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", fontSize: "24px", fontWeight: "bold", color: "#333" }}>Loading...</div>}><SignUp /></Suspense>
       },
 
       {
-        path: "/product/:id",
+        path: "product/:id",
         element: <Suspense fallback={<div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", fontSize: "24px", fontWeight: "bold", color: "#333" }}>Loading...</div>}><ProductDetail /></Suspense>
       },
 
       {
-        path: "/profile",
+        path: "profile",
         element: <Suspense fallback={<div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", fontSize: "24px", fontWeight: "bold", color: "#333" }}>Loading...</div>}><Profile /></Suspense>
       },
 
